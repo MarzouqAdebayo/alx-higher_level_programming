@@ -4,7 +4,7 @@ from sys import argv
 def print_argv():
     i = 0
     for j in argv:
-        if j == 0:
+        if i == 0:
             continue
         print(f"{i}: {j}")
         i += 1
