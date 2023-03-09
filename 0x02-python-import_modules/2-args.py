@@ -4,9 +4,8 @@ from sys import argv
 def print_argv():
     i = 0
     for j in argv:
-        if i == 0:
-            continue
-        print(f"{i}: {j}")
+        if i != 0:
+            print("{}: {}".format(i, j))
         i += 1
 
 if __name__ == "__main__":
