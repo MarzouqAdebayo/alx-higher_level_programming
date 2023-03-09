@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from sys import argv
 
+
 def infinite_add():
     if len(argv) - 1 < 1:
         print("0")
@@ -10,6 +11,7 @@ def infinite_add():
             sum += int(argv[i])
             i += 1
         print(sum)
+
 
 if __name__ == "__main__":
     infinite_add()

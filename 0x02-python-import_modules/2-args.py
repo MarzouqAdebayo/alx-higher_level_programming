@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 from sys import argv
 
+
 def print_argv():
-    i = 0
-    for j in argv:
-        if i != 0:
-            print("{}: {}".format(i, j))
-        i += 1
+    x = 0
+    for i in argv:
+        if x != 0:
+            print("{}: {}".format(x, i))
+        x += 1
+
 
 if __name__ == "__main__":
     if len(argv) - 1 == 1:
