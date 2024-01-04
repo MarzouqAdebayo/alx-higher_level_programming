@@ -1,23 +1,36 @@
 #!/usr/bin/python3
 from sys import argv, exit
-from calculator_1 import add, sub, mul, div
+import calculator_1 as cal
 
 if __name__ == "__main__":
-    operators = "+-*/"
-    a = argv[1]
-    op = argv[2]
-    b = argv[3]
-    if len(argv) != 4:
+    if len(argv) - 1 != 3:
         print("Usage: {} <a> <operator> <b>".format(argv[0]))
         exit(1)
-    if op not in operators:
+
+    elif argv[2] == "+":
+        print(
+            "{} {} {} = {}".format(
+                argv[1], argv[2], argv[3], cal.add(int(argv[1]), int(argv[3]))
+            )
+        )
+    elif argv[2] == "-":
+        print(
+            "{} {} {} = {}".format(
+                argv[1], argv[2], argv[3], cal.sub(int(argv[1]), int(argv[3]))
+            )
+        )
+    elif argv[2] == "*":
+        print(
+            "{} {} {} = {}".format(
+                argv[1], argv[2], argv[3], cal.mul(int(argv[1]), int(argv[3]))
+            )
+        )
+    elif argv[2] == "/":
+        print(
+            "{} {} {} = {}".format(
+                argv[1], argv[2], argv[3], cal.div(int(argv[1]), int(argv[3]))
+            )
+        )
+    else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
-    if op == "+":
-        print("{} {} {} = {}".format(a, op, b, add(int(a), int(b))))
-    if op == "-":
-        print("{} {} {} = {}".format(a, op, b, sub(int(a), int(b))))
-    if op == "*":
-        print("{} {} {} = {}".format(a, op, b, mul(int(a), int(b))))
-    if op == "/":
-        print("{} {} {} = {}".format(a, op, b, div(int(a), int(b))))
