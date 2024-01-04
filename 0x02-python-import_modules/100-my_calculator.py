@@ -8,15 +8,16 @@ if __name__ == "__main__":
     op = argv[2]
     b = argv[3]
     if len(argv) != 4:
+        print("Usage: {} <a> <operator> <b>".format(argv[0]))
         exit(1)
     if op not in operators:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
-    if (op == "+"):
+    if op == "+":
         print("{} {} {} = {}".format(a, op, b, add(int(a), int(b))))
-    if (op == "-"):
+    if op == "-":
         print("{} {} {} = {}".format(a, op, b, sub(int(a), int(b))))
-    if (op == "*"):
+    if op == "*":
         print("{} {} {} = {}".format(a, op, b, mul(int(a), int(b))))
-    if (op == "/"):
+    if op == "/":
         print("{} {} {} = {}".format(a, op, b, div(int(a), int(b))))
