@@ -19,21 +19,18 @@ int is_palindrome(listint_t **head)
 	{
 		fast = fast->next->next;
 
-		// Reverse the first half of the list while traversing
 		listint_t *next = slow->next;
 		slow->next = prev;
 		prev = slow;
 		slow = next;
 	}
 
-	// Set mid_node if the number of nodes is odd
 	if (fast != NULL)
 	{
 		mid_node = slow;
 		slow = slow->next;
 	}
 
-	// Compare the reversed first half with the second half
 	second_half = slow;
 	while (prev != NULL && second_half != NULL)
 	{
@@ -46,7 +43,6 @@ int is_palindrome(listint_t **head)
 		second_half = second_half->next;
 	}
 
-	// Restore the original list (reversing the first half back)
 	listint_t *restore = NULL;
 	while (slow != NULL)
 	{
@@ -56,7 +52,6 @@ int is_palindrome(listint_t **head)
 		slow = next;
 	}
 
-	// Connect the restored list to the mid_node (if it exists)
 	if (mid_node != NULL)
 		mid_node->next = restore;
 
