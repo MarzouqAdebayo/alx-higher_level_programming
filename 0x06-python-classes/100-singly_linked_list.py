@@ -28,6 +28,8 @@ class Node:
             next_node (Node, optional): The reference to the next node.
                 Defaults to None.
         """
+        if not isinstance(data, int):
+            raise TypeError("data must be an integer")
         self.__data = data
         self.__next_node = next_node
 
@@ -127,7 +129,9 @@ class SinglyLinkedList:
                 self.__head = new_node
             else:
                 current = self.__head
-                while current.next_node and current.next_node.data < value:
+                while current.next_node:
+                    if current.next_node.data > value:
+                        break
                     current = current.next_node
                 new_node.next_node = current.next_node
                 current.next_node = new_node
