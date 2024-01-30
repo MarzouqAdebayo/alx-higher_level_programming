@@ -13,8 +13,8 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     @property
@@ -59,9 +59,10 @@ class Rectangle:
         """Prints a friendly string"""
         rep = ""
         if self.__width != 0 and self.__height != 0:
-            for _ in range(self.__height):
+            for i in range(self.__height):
                 rep += Rectangle.print_symbol * self.__width
-                rep += "\n"
+                if i < self.__height - 1:
+                    rep += "\n"
         return rep
 
     def __repr__(self):
