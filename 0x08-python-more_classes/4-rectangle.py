@@ -55,9 +55,10 @@ class Rectangle:
         """Prints a friendly string"""
         rep = ""
         if self.__width != 0 and self.__height != 0:
-            for _ in range(self.__height):
+            for i in range(self.__height):
                 rep += "#" * self.__width
-                rep += "\n"
+                if i < self.__height - 1:
+                    rep += "\n"
         return rep
 
     def __repr__(self):
