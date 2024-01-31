@@ -1,0 +1,59 @@
+The ``4-print_square`` module
+============================
+
+``print_square()`` returns the division
+of a matrix by a number
+-----------------------------
+
+Import the function from the module
+	>>> print_square = __import__("4-print_square").print_square
+
+Check for module documentation
+      >>> len(__import__("4-print_square").__doc__) > 1
+      True
+
+Check for function documentation
+      >>> len(__import__("4-print_square").print_square.__doc__) > 1
+      True
+
+Check for positive int argument
+      >>> print_square(4)
+      ####
+      ####
+      ####
+      ####
+      >>> print_square(1)
+      #
+      >>> print_square(0)
+
+Check for non_int argument
+      >>> print_square(4.19)
+      Traceback (most recent call last):
+      ...
+      TypeError: size must be an integer
+      >>> print_square("Wireless")
+      Traceback (most recent call last):
+      ...
+      TypeError: size must be an integer
+      >>> print_square(True)
+      Traceback (most recent call last):
+      ...
+      TypeError: size must be an integer
+
+Check if size is less than 0
+      >>> print_square(-5)
+      Traceback (most recent call last):
+      ...
+      ValueError: size must be >= 0
+
+Check if size is float and less than 0
+      >>> print_square(-0.98)
+      Traceback (most recent call last):
+      ...
+      TypeError: size must be an integer
+
+Check if no argument passed
+      >>> print_square()
+      Traceback (most recent call last):
+      ...
+      TypeError: size must be an integer
