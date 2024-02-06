@@ -7,14 +7,14 @@ save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
 load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 
 
-FILE = "add_item.json"
+file_name = "add_item.json"
 
 try:
-    arr = load_from_json_file(FILE)
+    arr = load_from_json_file(file_name)
 except Exception:
     arr = []
 
 for _arg in sys.argv[1:]:
     arr.append(_arg)
 
-save_to_json_file(arr, FILE)
+save_to_json_file(arr, file_name)
