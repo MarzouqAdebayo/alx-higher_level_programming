@@ -20,7 +20,7 @@ class Student:
         """ retrives the dictionary description of
         Student class instance
         """
-        if not attrs or not isinstance(attrs, list):
+        if attrs is None:
             return self.__dict__
         ret_dict = {}
         for item in attrs:

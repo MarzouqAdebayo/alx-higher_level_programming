@@ -8,13 +8,13 @@ load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 
 
 FILE = "add_item.json"
-arr = []
 
 try:
     arr = load_from_json_file(FILE)
 except Exception:
-    pass
-finally:
-    for _arg in sys.argv[1:]:
-        arr.append(_arg)
-    save_to_json_file(arr, FILE)
+    arr = []
+
+for _arg in sys.argv[1:]:
+    arr.append(_arg)
+
+save_to_json_file(arr, FILE)
