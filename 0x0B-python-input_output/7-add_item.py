@@ -14,8 +14,7 @@ try:
     arr = load_from_json_file(FILE)
 except Exception:
     pass
-else:
+finally:
     for _arg in sys.argv[1:]:
         arr.append(_arg)
-finally:
     save_to_json_file(arr, FILE)
