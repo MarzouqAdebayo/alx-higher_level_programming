@@ -87,4 +87,3 @@ class Square(Rectangle):
             else:
                 attrs_dict[key] = (self.__dict__)["_Rectangle__" + key]
         return attrs_dict
-
