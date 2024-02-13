@@ -6,6 +6,11 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """Square class definition
+
+    Args:
+        Rectangle (class): Rectangle class
+    """
     def __init__(self, size, x=0, y=0, id=None):
         """__init__ _summary_
 
@@ -33,7 +38,7 @@ class Square(Rectangle):
         Returns:
             int: size of the square instance
         """
-        return self.__height
+        return self.width
 
     @size.setter
     def size(self, value):
