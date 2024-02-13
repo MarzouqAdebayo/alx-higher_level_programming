@@ -1,12 +1,11 @@
-#!/usr/bin/pyton3
+#!/usr/bin/python3
 """ Square module contains the Square class"""
-
 
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Square class definition
+    """Square sub-class definition
 
     Args:
         Rectangle (class): Rectangle class
@@ -88,3 +87,4 @@ class Square(Rectangle):
             else:
                 attrs_dict[key] = (self.__dict__)["_Rectangle__" + key]
         return attrs_dict
+
