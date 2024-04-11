@@ -1,5 +1,5 @@
 #!/usr/bin/node
-function fac(x) {
+function fac (x) {
   if (x > 1) {
     return (x * fac(x - 1));
   }
@@ -7,4 +7,3 @@ function fac(x) {
 }
 
 console.log(fac(Number.parseInt(process.argv[2])));
-
