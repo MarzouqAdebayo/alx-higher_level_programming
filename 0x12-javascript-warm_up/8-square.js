@@ -9,4 +9,3 @@ if (Number.parseInt(process.argv[2])) {
 } else {
   console.log('Missing size');
 }
-
