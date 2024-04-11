@@ -6,4 +6,3 @@ if (args[2] && Number.parseInt(args[2])) {
 } else {
   console.log('Not a number');
 }
-
