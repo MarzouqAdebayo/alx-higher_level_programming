@@ -6,4 +6,3 @@ if (args.length === 0 || args.length === 1) {
 } else {
   console.log(args.sort().reverse()[1]);
 }
-
