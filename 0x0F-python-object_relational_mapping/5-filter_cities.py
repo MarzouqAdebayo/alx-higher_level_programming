@@ -37,6 +37,8 @@ if __name__ == "__main__":
         rows = cur.fetchall()
 
         n = len(rows)
+        if (n == 0):
+            print("")
         for i in range(n):
             if (i == n - 1):
                 print(rows[i][0])
