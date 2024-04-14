@@ -6,13 +6,6 @@ if __name__ == "__main__":
     import MySQLdb
     import sys
 
-    if len(sys.argv) != 5:
-        print(
-                "Usage: {} <username> <password> <database> <state_name>"
-                .format(sys.argv[0])
-        )
-        sys.exit(1)
-
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
@@ -22,9 +15,9 @@ if __name__ == "__main__":
         connection = MySQLdb.connect(
             host="localhost",
             port=3306,
-            user=sys.argv[1],
-            passwd=sys.argv[2],
-            db=sys.argv[3]
+            user=username,
+            passwd=password,
+            db=database
         )
         cur = connection.cursor()
         cur.execute("SELECT * FROM states WHERE name='{}' ORDER BY id ASC;"
