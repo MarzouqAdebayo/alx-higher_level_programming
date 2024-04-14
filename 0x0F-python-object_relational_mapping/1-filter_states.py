@@ -6,13 +6,17 @@ if __name__ == "__main__":
     import MySQLdb
     from sys import argv
 
-    connection = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                                 passwd=argv[2], db=argv[3])
+    username = argv[1]
+    password = argv[2]
+    database = argv[3]
+
+    connection = MySQLdb.connect(host="localhost", port=3306, user=username,
+                                 passwd=password, db=database)
     cur = connection.cursor()
     cur.execute("SELECT * FROM states ORDER BY `id` ASC;")
     rows = cur.fetchall()
     for row in rows:
-        if (row[1].startWith('N'):
+        if (row[1].startWith('N')):
             print(row)
     cur.close()
     connection.close()
