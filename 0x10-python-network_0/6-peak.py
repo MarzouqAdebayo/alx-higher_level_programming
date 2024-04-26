@@ -1,5 +1,12 @@
 #!/usr/bin/python3
+"""
+A function that finds a peak in a list of unsorted integers.
+"""
+
 def find_peak(nums):
+    """
+    Return a peak in a list of unsorted integers
+    """
     if len(nums) == 0:
         return None
     i = 0
