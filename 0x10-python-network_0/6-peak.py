@@ -9,14 +9,15 @@ def find_peak(nums):
     """
     if len(nums) == 0:
         return None
-    i = 0
-    j = len(nums) - 1
-    peak = 0
-    while (i < j):
-        if nums[i] > peak:
-            peak = nums[i]
-        if nums[j] > peak:
-            peak = nums[j]
-        i+=1
-        j-=1
-    return peak
+    if len(nums) == 1:
+        return nums[0]
+    if len(nums) == 2:
+        return nums[0] if nums[0] > nums[1] else nums[1]
+    mid = len(nums) // 2
+    peak = nums[mid]
+    if peak > nums[mid - 1] and peak > nums[mid + 1]:
+        return peak
+    elif peak < nums[mid - 1]:
+        return find_peak(nums[:mid])
+    else:
+        return find_peak(nums[mid + 1:])
