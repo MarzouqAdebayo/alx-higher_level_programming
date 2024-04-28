@@ -8,8 +8,8 @@ import sys
 
 
 if __name__ == "__main__":
-    repo_name = sys.argv[1]
-    owner_name = sys.argv[2]
+    repo_name = sys.argv[2]
+    owner_name = sys.argv[1]
     headers = {'Accept': 'application/vnd.github+json',
                'X-GitHub-Api-Version': '2022-11-28'}
     r = requests.get(
