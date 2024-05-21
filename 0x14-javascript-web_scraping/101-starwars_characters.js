@@ -2,7 +2,6 @@
 const req = require('request');
 function getUsers (chs, idx = 0) {
   if (idx >= chs.length) return;
-  console.log(chs.length, idx);
   req(chs[idx], (err, res, data) => {
     if (!err) {
       console.log(JSON.parse(data).name);
