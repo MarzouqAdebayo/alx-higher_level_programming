@@ -7,4 +7,9 @@ $(function () {
     });
   }
   $('INPUT#btn_translate').on('click', getTranslate);
+  $('INPUT#language_code').on('keyup', function (event) {
+    if (event.key === 'Enter' || event.keyCode === 13) {
+      getTranslate();
+    }
+  });
 });
